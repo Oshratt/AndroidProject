@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape android:shape="oval">
+            <solid android:color="@color/purple_200"/>
+            <corners android:radius="20dp"/>
+            <padding android:right="10dp"/>
+            <gradient android:startColor="@color/purple_500" android:endColor="@color/bluewhite"
+                android:angle="45">
+
+            </gradient>
+            <stroke android:dashGap="@dimen/cardview_compat_inset_shadow"/>
+        </shape>
+
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/blue"/>
+            <corners android:radius="20dp"/>
+            <padding android:right="10dp"/>
+            <stroke android:dashGap="@dimen/cardview_compat_inset_shadow"/>
+        </shape>
+
+    </item>
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/purple_200"/>
+            <corners android:radius="20dp"/>
+            <padding android:right="10dp"/>
+            <stroke android:dashGap="@dimen/cardview_compat_inset_shadow"/>
+            <gradient android:startColor="@color/purple_200" android:endColor="@color/purple_500"
+                android:angle="45">
+            </gradient>
+
+        </shape>
+
+    </item>
+</selector>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NumberNinja</string>
+    <string name="btn_continue">המשך</string>
+    <string name="user_etd">הקלד שם משתמש</string>
+    <string name="btnback">חזור</string>
+    <string name="user_tv">שם משתמש:</string>
+    <string name="btnStartGame">התחל משחק</string>
+</resources>

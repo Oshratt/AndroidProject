@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NumberNinja</string>
+    <string name="btn_continue">continue</string>
+    <string name="user_etd">Enter user name</string>
+    <string name="btnback">back</string>
+    <string name="user_tv">User name:</string>
+    <string name="btnStartGame">Start Game</string>
+</resources>
