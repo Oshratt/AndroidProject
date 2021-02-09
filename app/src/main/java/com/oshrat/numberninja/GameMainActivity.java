@@ -2,20 +2,22 @@ package com.oshrat.numberninja;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
 
 public class GameMainActivity extends Activity {
+    public int Game_mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         //Set phone default to landscape
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -30,6 +32,10 @@ public class GameMainActivity extends Activity {
         //Set size of screen in Constants Class
         Constants.SCREEN_WIDTH = metrics.widthPixels;
         Constants.SCREEN_HEIGHT = metrics.heightPixels;
+//        Intent intent = getIntent();
+//        Game_mode = intent.getExtras().getInt("data");
+
+
 
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -41,6 +47,14 @@ public class GameMainActivity extends Activity {
         Constants.PREF = pref;
 
         setContentView(new GamePanel(this));
+
+
+
+
+//        public int getGame_mode(){
+//            return Game_mode;
+//        };
+
 
     }
 }

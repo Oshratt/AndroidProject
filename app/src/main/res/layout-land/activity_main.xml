@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/maxresdefault"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_weight="20"
+    android:forceDarkAllowed="true"
+
+    android:layout_gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/titelogo">
+
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User name:"
+            android:fontFamily="@font/aclonica"
+
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:id="@+id/user_tv"
+            android:textSize="30dp">
+
+        </TextView>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_etd"
+            android:fontFamily="@font/aclonica"
+            android:layout_weight="5"
+            android:layout_gravity="center"
+            android:hint="Enter user name">
+
+        </EditText>
+
+
+    </LinearLayout>
+
+
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Register"-->
+    <!--        android:layout_marginTop="50dp"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:clickable="true"-->
+    <!--        android:id="@+id/btn_register"-->
+    <!--        android:layout_gravity="center">-->
+
+    <!--    </Button>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="8"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_continue"
+            android:textAllCaps="false"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:backgroundTint="@null"
+            android:padding="20dp"
+            android:fontFamily="@font/aclonica"
+            android:background="@drawable/btn_selector"
+            android:layout_margin="10dp"
+            android:text="continue" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_weight="4"
+            android:id="@+id/ninja_animation"
+            android:src="@drawable/ninja_animation">
+
+        </ImageView>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

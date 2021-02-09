@@ -14,36 +14,43 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
-    private com.oshrat.numberninja.MainThread thread;
-    private com.oshrat.numberninja.Player user;
+    private MainThread thread;
+    private Player user;
     private Point userPoint;
-    private com.oshrat.numberninja.FruitManager fruitManager;
+    private FruitManager fruitManager;
 
-    private int highScore = com.oshrat.numberninja.Constants.PREF.getInt("key", 0);
-
+    private int highScore = Constants.PREF.getInt("key", 0);
+    //private   int TypeGame = Constants.PREF.getInt("mode", 0);
     private boolean gameOver = false;
+    SharedPreferences sharedPreferences ;
+
+    private String nickname;
+
 
     public GamePanel(Context context){
-
         super(context);
+        sharedPreferences =  context.getSharedPreferences("MY_APP",Context.MODE_PRIVATE);
 
         getHolder().addCallback(this);
 
-        com.oshrat.numberninja.Constants.CURRENT_CONTEXT = context;
+        Constants.CURRENT_CONTEXT = context;
 
-        thread = new com.oshrat.numberninja.MainThread(getHolder(), this);
+        thread = new MainThread(getHolder(), this);
 
         //Instantiate player
-        user = new com.oshrat.numberninja.Player(new Rect(100,100,200,200), Color.argb(0, 0, 0,0));
+        user = new Player(new Rect(100,100,200,200), Color.argb(0, 0, 0,0));
 
         //Instantiate location of the player
         userPoint = new Point(150,150);
         user.update(userPoint);
 
+
         //Instantiate the fruit-managing class
-        fruitManager = new com.oshrat.numberninja.FruitManager(200, 200, 325, Color.argb(0,255,255,255));
+        fruitManager = new FruitManager(200, 200, 325, Color.argb(0,255,255,255),getContext());
 
         setFocusable(true);
     }
@@ -58,7 +65,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public void surfaceCreated(SurfaceHolder holder){
 
-        thread = new com.oshrat.numberninja.MainThread(getHolder(), this);
+        thread = new MainThread(getHolder(), this);
         thread.setRunning(true);
         thread.start();
 
@@ -94,7 +101,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
         userPoint = new Point(150,150);
         user.update(userPoint);
 
-        fruitManager = new com.oshrat.numberninja.FruitManager(200, 200, 325, Color.argb(0,255,255,255));
+        fruitManager = new FruitManager(200, 200, 325, Color.argb(0,255,255,255),getContext());
 
     }
 
@@ -186,15 +193,13 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
             BitmapFactory bf1 = new BitmapFactory();
 
-            Bitmap gOverImg = bf1.decodeResource(com.oshrat.numberninja.Constants.CURRENT_CONTEXT.getResources(), R.drawable.boomb);
+            Bitmap gOverImg = bf1.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.boomb);
 
             canvas.drawBitmap(BitmapFactory.decodeResource(getResources(),
                     R.drawable.blue_b), 0, 0, null);
             if(highScore < fruitManager.getScore()){
 
-                SharedPreferences.Editor editor = com.oshrat.numberninja.Constants.PREF.edit();
-                editor.putInt("key", fruitManager.getScore());
-                editor.commit();
+
 
                 highScore = fruitManager.getScore();
 
@@ -207,14 +212,27 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             p.setTextSize(100);
 
 
-            Rect img = new Rect(com.oshrat.numberninja.Constants.SCREEN_WIDTH/2 - 250,0, com.oshrat.numberninja.Constants.SCREEN_WIDTH/2 + 250,500);
+            Rect img = new Rect(Constants.SCREEN_WIDTH/2 - 250,0, Constants.SCREEN_WIDTH/2 + 250,500);
             canvas.drawBitmap(gOverImg, null, img, null);
+            if(sharedPreferences.getString("nickname","")!=null)
+            {
+                nickname = sharedPreferences.getString("nickname","");
+            }
+
 
             Rect bounds = new Rect();
-            String text1 = "Game Over! Tap to Restart";
+            String text0 = nickname+"";
+            p.getTextBounds(text0, 0, text0.length(), bounds);
+            int x0 = (canvas.getWidth() / 2) - (bounds.width() / 2);
+            int y0 = (canvas.getHeight() / 2) - (bounds.height() / 2);
+
+            String text1 = getResources().getString(R.string.Game_Over);
+
             p.getTextBounds(text1, 0, text1.length(), bounds);
             int x1 = (canvas.getWidth() / 2) - (bounds.width() / 2);
             int y1 = (canvas.getHeight() / 2) - (bounds.height() / 2);
+
+
 
             String text2 = "Score: " + fruitManager.getScore();
             p.getTextBounds(text2, 0, text2.length(), bounds);
@@ -227,9 +245,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             int y3 = (canvas.getHeight() / 2) - (bounds.height() / 2);
 
 
-
-            canvas.drawText(text1, x1, y1, p);
-            canvas.drawText(text2, x2, y2 + 200, p);
+            canvas.drawText(text0, x0, y0, p);
+            canvas.drawText(text1, x1, y1 + 100, p);
+            canvas.drawText(text2, x2, y2 + 250, p);
             canvas.drawText(text3, x3, y3 + 400, p);
 
         }

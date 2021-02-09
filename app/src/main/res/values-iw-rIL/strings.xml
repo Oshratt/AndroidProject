@@ -6,4 +6,5 @@
     <string name="btnback">חזור</string>
     <string name="user_tv">שם משתמש:</string>
     <string name="btnStartGame">התחל משחק</string>
+    <string name="Game_Over">סיום משחק</string>
 </resources>

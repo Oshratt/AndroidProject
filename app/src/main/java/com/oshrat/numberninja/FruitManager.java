@@ -1,17 +1,26 @@
 package com.oshrat.numberninja;
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.content.SharedPreferences;
+
+
+import android.util.Log;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class FruitManager {
+public class FruitManager  {
 
     //Used to assign images to the fruit rectangles
     private static BitmapFactory bf = new BitmapFactory();
@@ -140,14 +149,26 @@ public class FruitManager {
     private static MediaPlayer FRUIT2 = MediaPlayer.create(Constants.CURRENT_CONTEXT, R.raw.slice4);
 
     private ArrayList<Fruit> fruits;  //Array of fruits currently on screen
+    //int arraytest[]={R.drawable.a0,R.drawable.a1,R.drawable.a2,R.drawable.a3,R.drawable.a4,R.drawable.a5,R.drawable.a6,R.drawable.a7,R.drawable.a8,R.drawable.a9,R.drawable.a10,R.drawable.a11,R.drawable.a12,R.drawable.a13,R.drawable.a14,R.drawable.a15,R.drawable.a16,R.drawable.a17,R.drawable.a18,R.drawable.a19,R.drawable.a20,R.drawable.a21,R.drawable.a22,R.drawable.a23,R.drawable.a24,R.drawable.a25,R.drawable.a26,R.drawable.a27,R.drawable.a28,R.drawable.a29,R.drawable.a30,R.drawable.a31,R.drawable.a32,R.drawable.a33,R.drawable.a34,R.drawable.a35,R.drawable.a36,R.drawable.a37,R.drawable.a38,R.drawable.a39,R.drawable.a40,R.drawable.a41,R.drawable.a42,R.drawable.a43,R.drawable.a44,R.drawable.a45,R.drawable.a46,R.drawable.a47,R.drawable.a48,R.drawable.a49,R.drawable.a50,R.drawable.a51,R.drawable.a52,R.drawable.a53,R.drawable.a54,R.drawable.a55,R.drawable.a56,R.drawable.a57,R.drawable.a58,R.drawable.a59,R.drawable.a60,R.drawable.a61,R.drawable.a62,R.drawable.a63,R.drawable.a64,R.drawable.a65,R.drawable.a66,R.drawable.a67,R.drawable.a68,R.drawable.a69,R.drawable.a70,R.drawable.a71,R.drawable.a72,R.drawable.a73,R.drawable.a74,R.drawable.a75,R.drawable.a75,R.drawable.a76,R.drawable.a77,R.drawable.a78,R.drawable.a79,R.drawable.a80,R.drawable.a81,R.drawable.a82,R.drawable.a83,R.drawable.a84,R.drawable.a85,R.drawable.a86,R.drawable.a87,R.drawable.a88,R.drawable.a89,R.drawable.a90,R.drawable.a91,R.drawable.a92,R.drawable.a93,R.drawable.a94,R.drawable.a95,R.drawable.a96,R.drawable.a97,R.drawable.a98,R.drawable.a99,R.drawable.boomb,R.drawable.blue_b,R.drawable.yellowboomb,R.drawable.boomb,R.drawable.blue_b,R.drawable.yellowboomb,R.drawable.boomb,R.drawable.blue_b,R.drawable.yellowboomb,R.drawable.boomb,R.drawable.blue_b,R.drawable.yellowboomb,R.drawable.boomb,R.drawable.blue_b,R.drawable.yellowboomb,R.drawable.boomb,R.drawable.blue_b,R.drawable.yellowboomb};
+
 
     private int fruitLocation;        //Location of falling fruit
     private int playerSize;           //Size of the user's swipe space
     private int fruitHeight;          //Height of the fruit rectangle
     private int color;
-    private int TypeGameMode=0;
 
-    private int score = 0;            //Game score
+    SharedPreferences sharedPreferences ;
+    Context mcontext;
+    Boolean music=false;
+
+
+    //int TypeGameMode ;
+    //int idName = sharedPreferences.getInt("mode_game", 0); //0 is the default value.
+    //private int idName = Constants.PREF.getInt("mode", 0);
+
+    private int idName;
+
+
 
     private int highScore = Constants.PREF.getInt("key", 0);
 
@@ -158,14 +179,34 @@ public class FruitManager {
     private long start;
     private long initialization;
 
-    public FruitManager(int playerSize, int fruitLocation, int fruitHeight, int color){
 
+
+
+
+
+
+
+    int score= 0;
+
+
+    public FruitManager(int playerSize, int fruitLocation, int fruitHeight, int color ,Context context){
+        mcontext = context;
+//        SharedPreferences prefs = getSharedPreferences("progress", MODE_PRIVATE);
+//
+//        TypeGameMode = prefs.getInt("mode_game", 0); //0 is the default value.        TypeGameMode = idName;
+        sharedPreferences =  mcontext.getSharedPreferences("MY_APP",Context.MODE_PRIVATE);
         fruits = new ArrayList<>();
 
         this.fruitLocation = fruitLocation;
         this.playerSize = playerSize;
         this.fruitHeight = fruitHeight;
         this.color = color;
+
+        if(sharedPreferences.getInt("mode",0)!=-1)
+        {
+            idName=sharedPreferences.getInt("mode",0);
+            music=sharedPreferences.getBoolean("music",true);
+        }
 
         start = initialization = System.currentTimeMillis();
 
@@ -189,27 +230,35 @@ public class FruitManager {
             if(f.collisionDetection(player)){
                 if (fruits.get(fruits.size() - 1).getType() < 100)
                 {
-                    if (TypeGameMode == 0) {
+                    if (idName == 0) {
                         if (f.getType()%2 == 0) {
-                            MISSED.start();
+                            if(music==true) {
+                                MISSED.start();
+                            }
                             misses++;
                         }
                     }
-                    if (TypeGameMode == 1) {
+                    if (idName == 1) {
                         if (f.getType()%2 == 1) {
-                            MISSED.start();
+                            if(music==true) {
+                                MISSED.start();
+                            }
                             misses++;
                         }
                     }
-                    if (TypeGameMode == 2) {
+                    if (idName == 2) {
                         if (f.getType()%3 == 0) {
-                            MISSED.start();
+                            if(music==true) {
+                                MISSED.start();
+                            }
                             misses++;
                         }
                     }
-                    if (TypeGameMode == 3) {
+                    if (idName == 3) {
                         if (f.getType()%7 == 0) {
-                            MISSED.start();
+                            if(music==true) {
+                                MISSED.start();
+                            }
                             misses++;
 
                         }
@@ -217,8 +266,9 @@ public class FruitManager {
                 }
                 //Game over, hit a bomb
                 if(f.getType() >= 100) {
-
-                    BOMB_NOISE.start();
+                    if(music==true){
+                    BOMB_NOISE.start();}
+                    else
                     return true;
 
                 }
@@ -228,8 +278,16 @@ public class FruitManager {
                 //Determine a noise to play for slicing the fruit
                 int val = rand.nextInt(2 - 1) + 1;
 
-                if(val == 1){ FRUIT1.start(); }
-                else{ FRUIT2.start(); }
+                if(val == 1)
+                {
+                    if(music==true) {
+                        FRUIT1.start();
+                    }
+                }
+                else{
+                    if(music==true){
+                    FRUIT2.start(); }
+                }
 
                 //Increment score
                 score += f.getScoreVal();
@@ -304,27 +362,35 @@ public class FruitManager {
 
             if (fruits.get(fruits.size() - 1).getType() < 100)
             {
-                if (TypeGameMode == 0) {
+                if (idName == 0) {
                     if (fruits.get(fruits.size() - 1).getType() % 2 != 0) {
-                        MISSED.start();
+                        if(music==true) {
+                            MISSED.start();
+                        }
                         misses++;
                     }
                 }
-                if (TypeGameMode == 1) {
+                if (idName == 1) {
                     if (fruits.get(fruits.size() - 1).getType() % 2 != 1) {
-                        MISSED.start();
+                        if(music==true) {
+                            MISSED.start();
+                        }
                         misses++;
                     }
                 }
-                if (TypeGameMode == 2) {
+                if (idName == 2) {
                     if (fruits.get(fruits.size() - 1).getType() % 3 != 0) {
-                        MISSED.start();
+                        if(music==true) {
+                            MISSED.start();
+                        }
                         misses++;
                     }
                 }
-                if (TypeGameMode == 3) {
+                if (idName == 3) {
                     if (fruits.get(fruits.size() - 1).getType() % 7 != 0) {
-                        MISSED.start();
+                        if(music==true) {
+                            MISSED.start();
+                        }
                         misses++;
 
                     }
@@ -361,7 +427,6 @@ public class FruitManager {
         for(Fruit fruit : fruits){
 
             fruit.draw(canvas);
-
             //Assigns correct image to fruit based on type
             switch(fruit.getType()){
 
@@ -747,6 +812,7 @@ public class FruitManager {
             p1.setColor(Color.RED);
             canvas.drawText("X X X", 50, 200 + p1.descent() - p1.ascent(), p1);
         }
+
 
     }
 }

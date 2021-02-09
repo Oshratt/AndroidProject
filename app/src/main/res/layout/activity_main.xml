@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/maxresdefault"
     android:orientation="vertical"
+    android:forceDarkAllowed="true"
 
     android:layout_gravity="center_vertical"
     android:layout_weight="20"
