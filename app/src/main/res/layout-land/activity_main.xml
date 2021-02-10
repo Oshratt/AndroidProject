@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/maxresdefault"
     android:orientation="vertical"
     android:padding="10dp"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User name:"
+            android:text="@string/user_tv"
             android:fontFamily="@font/aclonica"
 
             android:textStyle="bold"
@@ -52,8 +52,9 @@
             android:id="@+id/user_etd"
             android:fontFamily="@font/aclonica"
             android:layout_weight="5"
+            android:text="@string/user_etd"
             android:layout_gravity="center"
-            android:hint="Enter user name">
+            android:hint="@string/user_etd">
 
         </EditText>
 
@@ -85,15 +86,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_continue"
             android:textAllCaps="false"
-            android:clickable="true"
-            android:layout_weight="1"
-            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_gravity="center_vertical"
             android:backgroundTint="@null"
+            app:backgroundTint="@null"
             android:padding="20dp"
             android:fontFamily="@font/aclonica"
             android:background="@drawable/btn_selector"
             android:layout_margin="10dp"
-            android:text="continue" />
+            android:text="@string/btn_continue" />
 
         <ImageView
             android:layout_width="wrap_content"

@@ -7,11 +7,11 @@ import android.graphics.Rect;
 
 public class Fruit implements GameObject{
 
-    private Rect rectangle;        //Fruit object
+    private Rect rectangle;        //number object
     private int color;             //Color used for instantiating rect object
-    private int scoreVal;          //Value associated to the type of fruit
+    private int scoreVal;          //Value associated to the type of number
 
-    private int fruitType;         //Type of the fruit (1 - 7)
+    private int fruitType;         //Type of the number (1 - 7)
 
     public Fruit(int rectHeight, int color, int startX, int startY, int playerSize, int type){
 

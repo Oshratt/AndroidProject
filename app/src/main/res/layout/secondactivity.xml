@@ -7,13 +7,21 @@
     android:background="@drawable/maxresdefault"
     android:orientation="vertical"
     android:forceDarkAllowed="true"
-    android:padding="50dp">
+    android:padding="30dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="right">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_volon"
+            android:padding="15dp"
+            android:id="@+id/volOn">
+
+        </ImageView>
 
 
         <Button
@@ -23,9 +31,11 @@
             android:textAllCaps="false"
             android:layout_gravity="right"
             android:padding="5dp"
+            android:textColor="@color/white"
+            android:background="@drawable/selector"
             android:id="@+id/btnback"
             android:fontFamily="@font/aclonica"
-            android:text="Back">
+            android:text="@string/btnback">
 
         </Button>
     </LinearLayout>
@@ -38,25 +48,31 @@
         android:padding="20dp"
         tools:context=".MainActivity">
 
-        <ImageView
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_volon"
-            android:id="@+id/volOn">
+            android:layout_gravity="center"
+            android:fontFamily="@font/aclonica"
+            android:text="@string/welcomebtn"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold">
 
-        </ImageView>
+        </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:fontFamily="@font/aclonica"
-            android:padding="10dp"
-            android:text="Welcome "
             android:textColor="@color/black"
             android:textSize="30dp"
-            android:id="@+id/user_saved"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:id="@+id/user_saved">
+
+        </TextView>
+
 
 <!--        <TextView-->
 <!--            android:id="@+id/user_saved"-->
@@ -74,7 +90,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:padding="10dp"
         android:orientation="vertical">
 
         <RadioGroup
@@ -89,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Odd Numbers"
+                android:text="@string/radiobtn1"
                 android:padding="10dp"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -100,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Even Numbers"
+                android:text="@string/radiobtn2"
                 android:padding="10dp"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -112,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Divided by 3"
+                android:text="@string/radiobtn3"
                 android:padding="10dp"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -123,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Divided by 7"
+                android:text="@string/radiobtn4"
                 android:textSize="25sp"
                 android:padding="10dp"
                 android:textStyle="bold" />
@@ -136,13 +152,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
         <ImageView
             android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:src="@drawable/finger_animation"
-            android:padding="20dp"
-            android:id="@+id/finger_animation"
+            android:layout_height="150dp"
+            android:src="@drawable/knife2"
+            android:padding="10dp"
+            android:id="@+id/knife1"
+            android:layout_gravity="center">
+
+        </ImageView>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/finger2"
+            android:padding="10dp"
+            android:id="@+id/knife3"
+            android:layout_gravity="center">
+
+        </ImageView>
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="150dp"
+            android:src="@drawable/knife"
+            android:padding="10dp"
+            android:id="@+id/knife2"
             android:layout_gravity="center">
 
         </ImageView>
@@ -166,12 +200,14 @@
             android:textColor="@color/white"
             android:textAllCaps="false"
             android:textStyle="bold"
+            android:padding="15dp"
+            android:layout_marginLeft="30dp"
             android:backgroundTint="@null"
-            android:gravity="center"
-            android:background="@drawable/btn_selector"
+            android:layout_gravity="center"
+            android:background="@drawable/selector"
             android:id="@+id/btnStartGame"
             android:fontFamily="@font/aclonica"
-            android:text="Start Game">
+            android:text="@string/btnStartGame">
 
         </Button>
 

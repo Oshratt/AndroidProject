@@ -782,15 +782,17 @@ public class FruitManager  {
         Paint p = new Paint();
         p.setTextSize(100);
         p.setColor(Color.BLACK);
-        canvas.drawText("Score: " + score, 50, 50 + p.descent() - p.ascent(), p);
 
+       // canvas.drawText(getResources().getString(R.string.scorebtn) + score, 50, 50 + p.descent() - p.ascent(), p);
+        canvas.drawText("Score :" + score, 50, 50 + p.descent() - p.ascent(), p);
 
 
         Paint pH = new Paint();
         pH.setTextSize(100);
         pH.setColor(Color.BLACK);
-        canvas.drawText("High Score: " + highScore, Constants.SCREEN_WIDTH - 750, 50 + pH.descent() - pH.ascent(), pH);
 
+        //canvas.drawText (getResources().get + highScore, Constants.SCREEN_WIDTH - 750, 50 + pH.descent() - pH.ascent(), pH);
+        canvas.drawText("High Score :" + score,  Constants.SCREEN_WIDTH - 750, 50 + pH.descent() - pH.ascent(), pH);
 
         //Number of misses
         if(misses == 1) {

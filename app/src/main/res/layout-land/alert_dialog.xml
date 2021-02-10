@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/maxresdefault">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:id="@+id/alert_title"
+        android:paddingBottom="10dp"
+        android:fontFamily="@font/aclonica"
+        android:textSize="30dp"
+
+        android:text="@string/Alertetitle"
+        android:hint="@string/Alertetitle">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/aclonica"
+        android:textSize="30dp"
+        android:id="@+id/alert_message"
+        android:text="@string/Alartemessege"
+        android:hint="@string/Alartemessege">
+    </TextView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cat4"
+        android:paddingTop="20dp"
+        android:id="@+id/alertninja"
+        android:layout_gravity="center">
+
+    </ImageView>
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:layout_margin="80dp"-->
+    <!--        android:layout_gravity="center">-->
+    <!--        <Button-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="left"-->
+    <!--            android:backgroundTint="@null"-->
+    <!--            android:text="@string/no"-->
+    <!--            android:id="@+id/btn_no"-->
+    <!--            android:fontFamily="@font/aclonica"-->
+    <!--            android:background="@drawable/btn_selector"-->
+    <!--            android:layout_marginRight="70dp"-->
+    <!--            android:padding="10dp">-->
+
+    <!--        </Button>-->
+    <!--        <Button-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="300dp"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:text="@string/yes"-->
+    <!--            android:id="@+id/btn_yes"-->
+    <!--            android:fontFamily="@font/aclonica"-->
+    <!--            android:background="@drawable/btn_selector"-->
+    <!--            android:backgroundTint="@null"-->
+    <!--            android:layout_gravity="right">-->
+
+    <!--        </Button>-->
+
+    <!--    </LinearLayout>-->
+
+</LinearLayout>

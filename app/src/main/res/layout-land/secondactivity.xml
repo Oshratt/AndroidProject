@@ -17,29 +17,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="right">
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textAllCaps="false"
-            android:layout_gravity="right"
-            android:padding="5dp"
-            android:id="@+id/btnback"
-            android:text="Back">
-
-        </Button>
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        tools:context=".MainActivity">
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,16 +27,54 @@
 
         </ImageView>
 
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:background="@drawable/btn_selector"
+            android:backgroundTint="@null"
+            android:textAllCaps="false"
+            android:layout_gravity="right"
+            android:padding="5dp"
+            android:fontFamily="@font/aclonica"
+            android:id="@+id/btnback"
+            android:text="@string/btnback">
+
+        </Button>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        tools:context=".MainActivity">
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/aclonica"
-            android:text="Welcome "
+            android:fontFamily="@font/lobster"
+            android:text="@string/welcomebtn"
             android:textColor="@color/black"
             android:textSize="30dp"
-            android:id="@+id/user_saved"
             android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:fontFamily="@font/aclonica"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:id="@+id/user_saved">
+
+        </TextView>
 
         <!--        <TextView-->
         <!--            android:id="@+id/user_saved"-->
@@ -85,15 +100,17 @@
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_gravity="center"
+            android:paddingRight="30dp"
+            android:layout_marginLeft="150dp"
             android:layout_height="wrap_content">
 
             <RadioButton
 
                 android:id="@+id/category1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Odd Numbers"
+                android:text="@string/radiobtn1"
                 android:layout_gravity="center"
                 android:padding="3dp"
                 android:textSize="25sp"
@@ -102,11 +119,11 @@
             <RadioButton
 
                 android:id="@+id/category2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
                 android:layout_gravity="center"
-                android:text="Even Numbers"
+                android:text="@string/radiobtn2"
                 android:padding="3dp"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -115,11 +132,11 @@
             <RadioButton
 
                 android:id="@+id/category3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/aclonica"
-                android:text="Divided by 3"
+                android:text="@string/radiobtn3"
                 android:padding="3dp"
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -127,10 +144,10 @@
             <RadioButton
 
                 android:id="@+id/category4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Divided by 7"
+                android:text="@string/radiobtn4"
                 android:layout_gravity="center"
                 android:textSize="25sp"
                 android:padding="3dp"
@@ -163,7 +180,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/knife"
+            android:padding="10dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/knife1"
+            android:layout_gravity="center">
+
+        </ImageView>
 
 
         <Button
@@ -173,14 +201,26 @@
             android:textColor="@color/white"
             android:textAllCaps="false"
             android:textStyle="bold"
+            android:layout_marginLeft="70dp"
             android:backgroundTint="@null"
             android:layout_gravity="center"
             android:background="@drawable/btn_selector"
             android:id="@+id/btnStartGame"
             android:fontFamily="@font/aclonica"
-            android:text="Start Game">
-
+            android:text="@string/btnStartGame">
         </Button>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/knife2"
+                android:id="@+id/knife2"
+                android:layout_marginLeft="90dp"
+                android:padding="10dp"
+                android:layout_gravity="center">
+
+            </ImageView>
+
 
     </LinearLayout>
 

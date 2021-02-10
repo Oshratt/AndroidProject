@@ -9,4 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#F9F9F9</color>
     <color name="bluewhite">#2196F3</color>
+    <color name="oreng">#EA5729</color>
+    <color name="oreng1">#6C240D</color>
+    <color name="yellow">#D5C859</color>
+    <color name="redwine">#E62D01</color>
+    <color name="black1">#1B1412</color>
+    <color name="gray">#586F81</color>
+    <color name="graywhite">#C3D7DA</color>
+    <color name="red">#E3011B</color>
 </resources>

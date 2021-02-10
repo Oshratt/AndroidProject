@@ -6,5 +6,19 @@
     <string name="btnback">חזור</string>
     <string name="user_tv">שם משתמש:</string>
     <string name="btnStartGame">התחל משחק</string>
-    <string name="Game_Over">סיום משחק</string>
+    <string name="radiobtn1">מספרים אי זוגיים</string>
+    <string name="radiobtn2">מספרים זוגיים</string>
+    <string name="radiobtn3">לא מתחלק ב3</string>
+    <string name="radiobtn4">לא מתחלק ב7</string>
+    <string name="welcomebtn">"ברוך הבא "</string>
+    <string name="scorebtn">"נקודות: "</string>
+    <string name="HighSbtn">"שיא: "</string>
+    <string name="gameOver">המשחק נגמר לחץ אנטר למשחק חדש</string>
+    <string name="newGameBtn">התחל משחק חדש</string>
+    <string name="Alartemessege">אתה בטוח שאתה רוצה להפסיק את המשחק?</string>
+    <string name="Alertetitle">יציאה מהמשחק</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
+    <string name="havefun">תהנה!</string>
+
 </resources>

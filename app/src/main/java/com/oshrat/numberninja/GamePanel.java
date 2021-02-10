@@ -208,7 +208,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             //canvas.drawColor(R.drawable.blue);
 
             Paint p = new Paint();
-            p.setColor(Color.WHITE);
+            p.setColor(Color.BLACK);
             p.setTextSize(100);
 
 
@@ -226,21 +226,22 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             int x0 = (canvas.getWidth() / 2) - (bounds.width() / 2);
             int y0 = (canvas.getHeight() / 2) - (bounds.height() / 2);
 
-            String text1 = getResources().getString(R.string.Game_Over);
+            String text1 = getResources().getString(R.string.gameOver);
 
             p.getTextBounds(text1, 0, text1.length(), bounds);
             int x1 = (canvas.getWidth() / 2) - (bounds.width() / 2);
             int y1 = (canvas.getHeight() / 2) - (bounds.height() / 2);
 
+            String text2 = getResources().getString(R.string.scorebtn)+fruitManager.getScore();
 
 
-            String text2 = "Score: " + fruitManager.getScore();
             p.getTextBounds(text2, 0, text2.length(), bounds);
             int x2 = (canvas.getWidth() / 2) - (bounds.width() / 2);
             int y2 = (canvas.getHeight() / 2) - (bounds.height() / 2);
 
-            String text3 = "High Score: " + highScore;
-            p.getTextBounds(text3, 0, text3.length(), bounds);
+            String text3 = getResources().getString(R.string.HighSbtn)+highScore;
+
+            p.getTextBounds(text3 , 0, text3.length(), bounds);
             int x3 = (canvas.getWidth() / 2) - (bounds.width() / 2);
             int y3 = (canvas.getHeight() / 2) - (bounds.height() / 2);
 

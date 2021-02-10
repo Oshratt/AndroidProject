@@ -1,7 +1,9 @@
 package com.oshrat.numberninja;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -22,7 +24,7 @@ import androidx.annotation.Nullable;
 
 import com.oshrat.numberninja.R;
 
-public class Second_Activity extends Activity {
+public class Second_Activity extends Activity  {
     boolean flag;
     Animation finger_anim;
     int mode_game=-1;
@@ -40,7 +42,7 @@ public class Second_Activity extends Activity {
         Button back_button;
         ImageView MusicOn;
         RadioGroup radioGroup;
-        ImageView finger_animation;
+        ImageView knife3, knife1,knife2;
         Button start_game;
 
         MusicOn = findViewById(R.id.volOn);
@@ -49,13 +51,23 @@ public class Second_Activity extends Activity {
         RadioButton R2 = findViewById(R.id.category2);
         RadioButton R3 = findViewById(R.id.category3);
         RadioButton R4 = findViewById(R.id.category4);
-        finger_animation = findViewById(R.id.finger_animation);
         sharedPreferences = getSharedPreferences("MY_APP",Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         sp = getSharedPreferences("details",MODE_PRIVATE);
         //String name = R.string.Game_Over;
+        knife1 = findViewById(R.id.knife1);
+        knife2 = findViewById(R.id.knife2);
+        knife3 = findViewById(R.id.knife3);
 
 
+
+        Animation knife_animation = AnimationUtils.loadAnimation(this,R.anim.knifeanim);
+        knife1.startAnimation(knife_animation);
+        knife2.startAnimation(knife_animation);
+//        knife3.startAnimation(knife_animation);
+
+//        Animation finger_animation = AnimationUtils.loadAnimation(this,R.anim.finger_animation);
+//        finger.startAnimation(finger_animation);
 
 //        finger_anim = AnimationUtils.loadAnimation(this, anim.R.finger_move);
 //        AnimationDrawable finger_anim_draw = (AnimationDrawable)finger_animation.getDrawable();
@@ -93,15 +105,12 @@ public class Second_Activity extends Activity {
                         }
                         if (checkedId ==R2.getId() ){
                             mode_game=1;
-                            Log.e("hhh", ""+mode_game);
                         }
                         if (checkedId ==R3.getId() ){
                             mode_game=2;
-                            Log.e("hhh", ""+mode_game);
                         }
                         if (checkedId ==R4.getId() ){
                             mode_game=3;
-                            Log.e("hhh", ""+mode_game);
                         }
 
             }
@@ -114,7 +123,7 @@ public class Second_Activity extends Activity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(Second_Activity.this,"ctegory 1", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Second_Activity.this,"ctegory 1", Toast.LENGTH_SHORT).show();
                 mode_game = 0;
             }
         });
@@ -122,7 +131,7 @@ public class Second_Activity extends Activity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(Second_Activity.this,"ctegory 2", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Second_Activity.this,"ctegory 2", Toast.LENGTH_SHORT).show();
                 mode_game = 1;
             }
         });
@@ -130,7 +139,7 @@ public class Second_Activity extends Activity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(Second_Activity.this,"ctegory 3", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Second_Activity.this,"ctegory 3", Toast.LENGTH_SHORT).show();
                 mode_game = 2;
             }
         });
@@ -138,7 +147,7 @@ public class Second_Activity extends Activity {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(Second_Activity.this,"ctegory 4", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Second_Activity.this,"ctegory 4", Toast.LENGTH_SHORT).show();
                 mode_game = 3;
             }
         });
@@ -162,7 +171,7 @@ public class Second_Activity extends Activity {
         back_button = findViewById(R.id.btnback);
         TextView user_saved = findViewById(R.id.user_saved);
 
-        user_saved.setText("welcome " +(sp.getString("user","")));
+        user_saved.setText(sp.getString("user",""));
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,4 +181,24 @@ public class Second_Activity extends Activity {
             }
         });
     }
+
+//    @Override
+//    public void onBackPressed() {
+//        //super.onBackPressed();
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Exit the game").setMessage("Are you sure you want to exit the game?")
+//                .setNegativeButton("No", (DialogInterface.OnClickListener) this)
+//                .setPositiveButton("Yes", (DialogInterface.OnClickListener) this).show();
+//    }
+//
+//    @Override
+//    public void onClick(DialogInterface dialog, int which) {
+//        if(which== DialogInterface.BUTTON_NEGATIVE){
+//            finish();
+//        }
+//        if(which==DialogInterface.BUTTON_POSITIVE){
+//            Toast.makeText(this,"Have fun", Toast.LENGTH_SHORT).show();
+//        }
+//
+//    }
 }
