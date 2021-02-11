@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+@SuppressWarnings("ALL")
 public class GameMainActivity extends Activity implements DialogInterface.OnClickListener{
     public int Game_mode;
 
