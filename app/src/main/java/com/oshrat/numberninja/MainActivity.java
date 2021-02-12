@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String user = user_etd.getText().toString();
                 if(user.matches("")){
-                    Toast.makeText(MainActivity.this, "Please enter user name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.enterUsername, Toast.LENGTH_SHORT).show();
 
                 }
                 else{

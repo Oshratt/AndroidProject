@@ -12,12 +12,14 @@
     <string name="welcomebtn">"Welcome "</string>
     <string name="scorebtn">"Score: "</string>
     <string name="HighSbtn">"High Score: "</string>
-    <string name="gameOver">Game Over! Tap to Restart</string>
+    <string name="gameOver">Tap to Restart</string>
     <string name="newGameBtn">start new game</string>
     <string name="Alartemessege">Are you sure you want to exit the game?</string>
     <string name="Alertetitle">Exit The game</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="havefun">Have fun!</string>
+    <string name="selectCategory">Please select a game category</string>
+    <string name="enterUsername">Please enter user name</string>
 
 </resources>

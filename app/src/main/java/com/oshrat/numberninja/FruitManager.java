@@ -144,7 +144,7 @@ public class FruitManager  {
 
     //Instantiate sound clips
     private static MediaPlayer BOMB_NOISE = MediaPlayer.create(Constants.CURRENT_CONTEXT, R.raw.bomb);
-    private static MediaPlayer MISSED = MediaPlayer.create(Constants.CURRENT_CONTEXT, R.raw.missed);
+    private static MediaPlayer MISSED = MediaPlayer.create(Constants.CURRENT_CONTEXT, R.raw.failmusic);
     private static MediaPlayer FRUIT1 = MediaPlayer.create(Constants.CURRENT_CONTEXT, R.raw.slice3);
     private static MediaPlayer FRUIT2 = MediaPlayer.create(Constants.CURRENT_CONTEXT, R.raw.slice4);
 
@@ -784,7 +784,7 @@ public class FruitManager  {
         p.setColor(Color.BLACK);
 
        // canvas.drawText(getResources().getString(R.string.scorebtn) + score, 50, 50 + p.descent() - p.ascent(), p);
-        canvas.drawText("Score :" + score, 50, 50 + p.descent() - p.ascent(), p);
+        canvas.drawText(Constants.CURRENT_CONTEXT.getResources().getString(R.string.scorebtn) + score, 50, 50 + p.descent() - p.ascent(), p);
 
 
         Paint pH = new Paint();
@@ -792,7 +792,7 @@ public class FruitManager  {
         pH.setColor(Color.BLACK);
 
         //canvas.drawText (getResources().get + highScore, Constants.SCREEN_WIDTH - 750, 50 + pH.descent() - pH.ascent(), pH);
-        canvas.drawText("High Score :" + score,  Constants.SCREEN_WIDTH - 750, 50 + pH.descent() - pH.ascent(), pH);
+        canvas.drawText(Constants.CURRENT_CONTEXT.getResources().getString(R.string.HighSbtn) + highScore,  Constants.SCREEN_WIDTH - 750, 50 + pH.descent() - pH.ascent(), pH);
 
         //Number of misses
         if(misses == 1) {

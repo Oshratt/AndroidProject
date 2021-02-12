@@ -57,7 +57,7 @@ public class Second_Activity extends Activity  {
         //String name = R.string.Game_Over;
         knife1 = findViewById(R.id.knife1);
         knife2 = findViewById(R.id.knife2);
-        knife3 = findViewById(R.id.knife3);
+
 
 
 
@@ -80,7 +80,7 @@ public class Second_Activity extends Activity  {
                 Intent intent = new Intent(Second_Activity.this, GameMainActivity.class);
                 if((R1.isChecked()==false)&&(R2.isChecked()==false)&&(R3.isChecked()==false)&&(R4.isChecked()==false))
                {
-                    Toast.makeText(Second_Activity.this,"Please select a game category", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Second_Activity.this,R.string.selectCategory, Toast.LENGTH_SHORT).show();
                 }
                 else {
                     editor.putBoolean("music", flag);
@@ -117,7 +117,7 @@ public class Second_Activity extends Activity  {
         });
 
 
-        flag = false;
+        flag = true;
 
         R1.setOnClickListener(new View.OnClickListener() {
             @Override

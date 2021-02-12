@@ -12,13 +12,15 @@
     <string name="radiobtn4">לא מתחלק ב7</string>
     <string name="welcomebtn">"ברוך הבא "</string>
     <string name="scorebtn">"נקודות: "</string>
-    <string name="HighSbtn">"שיא: "</string>
-    <string name="gameOver">המשחק נגמר לחץ אנטר למשחק חדש</string>
+    <string name="HighSbtn">שיא משחק :</string>
+    <string name="gameOver">" לחץ אנטר למשחק חדש"</string>
     <string name="newGameBtn">התחל משחק חדש</string>
     <string name="Alartemessege">אתה בטוח שאתה רוצה להפסיק את המשחק?</string>
     <string name="Alertetitle">יציאה מהמשחק</string>
     <string name="yes">כן</string>
     <string name="no">לא</string>
     <string name="havefun">תהנה!</string>
+    <string name="selectCategory">"אנא בחר גטגוריה "</string>
+    <string name="enterUsername">יש להזין שם משתמש</string>
 
 </resources>

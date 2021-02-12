@@ -193,10 +193,10 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
             BitmapFactory bf1 = new BitmapFactory();
 
-            Bitmap gOverImg = bf1.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.boomb);
+            Bitmap gOverImg = bf1.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.gg);
 
             canvas.drawBitmap(BitmapFactory.decodeResource(getResources(),
-                    R.drawable.blue_b), 0, 0, null);
+                    R.drawable.saaaad), -400, 0, null);
             if(highScore < fruitManager.getScore()){
 
 
@@ -208,7 +208,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             //canvas.drawColor(R.drawable.blue);
 
             Paint p = new Paint();
-            p.setColor(Color.BLACK);
+            p.setColor(Color.GRAY);
             p.setTextSize(100);
 
 
@@ -247,9 +247,9 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
 
 
             canvas.drawText(text0, x0, y0, p);
-            canvas.drawText(text1, x1, y1 + 100, p);
-            canvas.drawText(text2, x2, y2 + 250, p);
-            canvas.drawText(text3, x3, y3 + 400, p);
+            canvas.drawText(text1, x1, y0 + 95, p);
+            canvas.drawText(text2, x2, y2 + 185, p);
+            canvas.drawText(text3, x3, y3 + 300, p);
 
         }
 
