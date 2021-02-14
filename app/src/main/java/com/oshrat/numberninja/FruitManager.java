@@ -267,7 +267,10 @@ public class FruitManager  {
                 //Game over, hit a bomb
                 if(f.getType() >= 100) {
                     if(music==true){
-                    BOMB_NOISE.start();}
+                        BOMB_NOISE.start();
+                        return true;
+                    }
+
                     else
                     return true;
 
@@ -320,7 +323,7 @@ public class FruitManager  {
     private void populateFruits(){
 
         //Starting Y position for the fruit
-        int currentY = -5 * Constants.SCREEN_HEIGHT / 4;
+        int currentY = -5 * Constants.SCREEN_HEIGHT ;
 
         while(currentY < 0){
 

@@ -196,7 +196,7 @@ public class GamePanel extends SurfaceView implements SurfaceHolder.Callback {
             Bitmap gOverImg = bf1.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.gg);
 
             canvas.drawBitmap(BitmapFactory.decodeResource(getResources(),
-                    R.drawable.saaaad), -400, 0, null);
+                    R.drawable.saaaad), -200, 0, null);
             if(highScore < fruitManager.getScore()){
 
 
